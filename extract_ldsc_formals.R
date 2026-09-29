@@ -1,0 +1,7 @@
+suppressPackageStartupMessages(library(GenomicSEM))
+cat("=== FORMALS of ldsc ===\n")
+print(names(formals(GenomicSEM::ldsc)))
+src <- deparse(GenomicSEM::ldsc)
+cat("\n=== lines handling ld / wld / M / file reading ===\n")
+idx <- grep("wld|ldscore|list.files|M_5_50|paste0|\\.l2|M <-|ld <-|wld <-|ref_ld|weights", src, ignore.case=TRUE)
+for (i in idx) cat(i, ":", src[i], "\n")
